@@ -105,7 +105,7 @@ fn configure_spdk() -> Result<LibraryConfig, Error> {
 
     spdk_lib.find_pkg_config_dirs(&spdk_path)?;
 
-    spdk_lib.exclude_lib("spdk_bdev_blobfs");
+    // spdk_lib.exclude_lib("spdk_bdev_blobfs");
     spdk_lib.exclude_lib("spdk_bdev_ftl");
     spdk_lib.exclude_lib("spdk_bdev_gpt");
     spdk_lib.exclude_lib("spdk_bdev_passthru");
@@ -156,6 +156,9 @@ fn configure_spdk() -> Result<LibraryConfig, Error> {
         "spdk_event_sock",
         "spdk_event_vmd",
         "spdk_nvmf",
+        "spdk_blobfs",
+        "spdk_blobfs_bdev",
+        "spdk_blob"
     ])?;
 
     spdk_lib.find_lib("spdk_syslibs")?;
